@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 <script>(function(){var r=document.documentElement;r.classList.remove('no-js');
 /* la firma: finché main.js non parte c'è il pacchetto senza nastro; se il codice non arriva, dopo 2,5 s il pacchetto col fiocco */
 try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add('firma-attesa');window.__attesaNastro=setTimeout(function(){r.classList.remove('firma-attesa')},2500)}}catch(e){}})()</script>
@@ -20,15 +21,72 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@500;600&amp;family=Junge&amp;family=Arsenal:wght@400;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js?v=1" defer></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"La Mercerie des Rêves","description":"Merceria in Via Terraggio 21 a Milano, vicino a Sant'Ambrogio: nastri e passamanerie, bottoni, filati e kit da ricamo, tessuti americani, biancheria per la casa e per la nascita, ricami su ordinazione.","url":"https://rotenzark.github.io/la-mercerie-des-reves/","image":"https://rotenzark.github.io/la-mercerie-des-reves/img/og.jpg","telephone":"+39 02 4770 2726","address":{"@type":"PostalAddress","streetAddress":"Via Terraggio 21","postalCode":"20123","addressLocality":"Milano","addressRegion":"MI","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":45.464661,"longitude":9.17558},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday"],"opens":"15:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"14:30","closes":"19:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"80","bestRating":"5"},"sameAs":["https://www.instagram.com/lamerceriedesreves/","https://www.facebook.com/people/La-Mercerie-des-r%C3%AAves-dal-1987/100063032751045/"]}
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "La Mercerie des Rêves",
+  "description": "Merceria in Via Terraggio 21 a Milano, vicino a Sant'Ambrogio: nastri e passamanerie, bottoni, filati e kit da ricamo, tessuti americani, biancheria per la casa e per la nascita, ricami su ordinazione.",
+  "url": "https://rotenzark.github.io/la-mercerie-des-reves/",
+  "image": "https://rotenzark.github.io/la-mercerie-des-reves/img/og.jpg",
+  "telephone": "+39 02 4770 2726",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Terraggio 21",
+    "postalCode": "20123",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.464661,
+    "longitude": 9.17558
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday"
+      ],
+      "opens": "15:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "14:30",
+      "closes": "19:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/lamerceriedesreves/",
+    "https://www.facebook.com/people/La-Mercerie-des-r%C3%AAves-dal-1987/100063032751045/"
+  ]
+}
 </script>
 </head>
 <body>
@@ -83,7 +141,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
       <p class="apertura__frase" data-i18n="h.testo">Nastri e passamanerie, bottoni, filati e kit da ricamo, tessuti americani, biancheria per la casa e per la nascita; e i ricami di Sabine, su ordinazione.</p>
       <p class="voto"><b class="voto__n">4,8</b> <span class="voto__su" data-i18n="h.google">su Google, 80 recensioni</span></p>
       <blockquote class="citazione">
-        <p>«Il nome non mente: troverete davvero il luogo dei sogni.»</p>
+        <p lang="it">«Il nome non mente: troverete davvero il luogo dei sogni.»</p>
         <footer data-i18n="h.chi">maria ficetti, in una recensione su Google</footer>
       </blockquote>
       <p class="stato" id="orarioStato">Da martedì a sabato 10–14 e 14:30–19</p>
@@ -238,12 +296,12 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <h2 id="diconoT" class="capitolo__titolo" data-i18n="d.titolo">Scritte da voi</h2>
     <p class="voto voto--sezione"><b class="voto__n">4,8</b> <span class="voto__su" data-i18n="d.google">su Google, 80 recensioni</span></p>
     <ul class="etichette-tessute">
-      <li class="tessuta reveal"><p class="tessuta__testo">«Cercavo della passamaneria bordata per punto croce, per fare dei segnalibri e magia! Quante ce n’erano e quanti colori! Sabine è gentilissima e fornisce tutto con precisione e rispetto. Appena sono entrata nel negozio sono stata catapultata in un’altra epoca! Complimenti e che la magia non finisca mai in questo posto splendido.»</p><p class="tessuta__chi"><b>Alice Brambilla</b> <span data-i18n="d.g9m">Google, 9 mesi fa</span></p></li>
-      <li class="tessuta reveal"><p class="tessuta__testo">«Milano regala sempre qualche sorpresa e là mercerie de reves è una di queste. Visto da fuori il negozio sembra piccolo ma all’interno, tra scaffali che scorrono uno sull’altro, ed angoli segreti, comincia la magia: bottoni vintage di rara fattura, raffinate passamanerie francesi, nastri di qualsivoglia tessuto e della migliore qualità sono solo alcune delle chicche che troverete in questo negozio. Come è capitato a me non saprete più cosa comprare. Non preoccupatevi: la proprietaria, una professionista del settore, saprà guidarvi al meglio nella scelta di ció che vi occorre.»</p><p class="tessuta__chi"><b>Anna Bertuzzo</b> <span data-i18n="d.g4a">Google, 4 anni fa</span></p></li>
-      <li class="tessuta reveal"><p class="tessuta__testo">«Ho contattato telefonicamente questa merceria e la titolare è stata veramente disponibile a tutto ciò che io ho chiesto, alla fine ho ordinato la merce telefonicamente, ho effettuato il BB per l'importo dovuto e ora attendo la merce che la signora SABINE mi ha spedito con RR. Consiglio questa merceria.»</p><p class="tessuta__chi"><b>Rossella Zamboni</b> <span data-i18n="d.g2m">Google, 2 mesi fa</span></p></li>
-      <li class="tessuta reveal"><p class="tessuta__testo">«Alta qualità, vasta scelta e tanto, tanto buon gusto. Bottoni, stoffe, nastrini vestitini per bambine, segnalibri e molto altro.Non è una merceria normale, sono articoli di qualità top (ma a buon prezzo).Io che amo le cose ricamate (ma non le so fare), mi sono fatta realizzare tutto da Sabine: ha le mani d'oro!Consigliatissimo!»</p><p class="tessuta__chi"><b>Chiara Bellavitis</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
-      <li class="tessuta reveal"><p class="tessuta__testo">«Un negozio d'incanto a due passi da Sant'Ambrogio.Sabine, la proprietaria, è l'anima di questo incanto: con passione, cura ed attenzione è riuscita a consigliarmi l'idea regalo più adatta alle mie necessità.Sono davvero soddisfattissima.Grazie di cuore.»</p><p class="tessuta__chi"><b>Carlotta Cattaneo</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
-      <li class="tessuta reveal"><p class="tessuta__testo">«È un luogo delizioso dove si possono trovare bottoni e passamanerie molto molto belli e particolari oltre ad altre cose create e realizzate dalla gentilissima proprietaria!»</p><p class="tessuta__chi"><b>Aurea Cassella</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«Cercavo della passamaneria bordata per punto croce, per fare dei segnalibri e magia! Quante ce n’erano e quanti colori! Sabine è gentilissima e fornisce tutto con precisione e rispetto. Appena sono entrata nel negozio sono stata catapultata in un’altra epoca! Complimenti e che la magia non finisca mai in questo posto splendido.»</p><p class="tessuta__chi"><b>Alice Brambilla</b> <span data-i18n="d.g9m">Google, 9 mesi fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«Milano regala sempre qualche sorpresa e là mercerie de reves è una di queste. Visto da fuori il negozio sembra piccolo ma all’interno, tra scaffali che scorrono uno sull’altro, ed angoli segreti, comincia la magia: bottoni vintage di rara fattura, raffinate passamanerie francesi, nastri di qualsivoglia tessuto e della migliore qualità sono solo alcune delle chicche che troverete in questo negozio. Come è capitato a me non saprete più cosa comprare. Non preoccupatevi: la proprietaria, una professionista del settore, saprà guidarvi al meglio nella scelta di ció che vi occorre.»</p><p class="tessuta__chi"><b>Anna Bertuzzo</b> <span data-i18n="d.g4a">Google, 4 anni fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«Ho contattato telefonicamente questa merceria e la titolare è stata veramente disponibile a tutto ciò che io ho chiesto, alla fine ho ordinato la merce telefonicamente, ho effettuato il BB per l'importo dovuto e ora attendo la merce che la signora SABINE mi ha spedito con RR. Consiglio questa merceria.»</p><p class="tessuta__chi"><b>Rossella Zamboni</b> <span data-i18n="d.g2m">Google, 2 mesi fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«Alta qualità, vasta scelta e tanto, tanto buon gusto. Bottoni, stoffe, nastrini vestitini per bambine, segnalibri e molto altro.Non è una merceria normale, sono articoli di qualità top (ma a buon prezzo).Io che amo le cose ricamate (ma non le so fare), mi sono fatta realizzare tutto da Sabine: ha le mani d'oro!Consigliatissimo!»</p><p class="tessuta__chi"><b>Chiara Bellavitis</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«Un negozio d'incanto a due passi da Sant'Ambrogio.Sabine, la proprietaria, è l'anima di questo incanto: con passione, cura ed attenzione è riuscita a consigliarmi l'idea regalo più adatta alle mie necessità.Sono davvero soddisfattissima.Grazie di cuore.»</p><p class="tessuta__chi"><b>Carlotta Cattaneo</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
+      <li class="tessuta reveal"><p lang="it" class="tessuta__testo">«È un luogo delizioso dove si possono trovare bottoni e passamanerie molto molto belli e particolari oltre ad altre cose create e realizzate dalla gentilissima proprietaria!»</p><p class="tessuta__chi"><b>Aurea Cassella</b> <span data-i18n="d.g5a">Google, 5 anni fa</span></p></li>
     </ul>
     <p class="dicono__nota"><span data-i18n="d.nota">Dalle recensioni su Google, come sono state scritte; la frase in alto è di un'altra cliente, sempre su Google.</span> <a href="https://www.google.com/maps/search/?api=1&amp;query=La+Mercerie+des+R%C3%AAves%2C+Via+Terraggio+21%2C+20123+Milano" target="_blank" rel="noopener" data-i18n="d.tutte">Tutte le recensioni su Google</a></p>
   </section>
@@ -266,7 +324,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <p class="orari__nota" data-i18n="o.nota">Orari dalla nostra scheda Google (settembre 2026): la pausa è dalle 14 alle 14:30.</p>
     <div class="dove" id="dove">
       <div class="cartina reveal">
-        <iframe title="Mappa: La Mercerie des Rêves, Via Terraggio 21, Milano" data-i18n-title="w.mappa" src="https://maps.google.com/maps?q=La%20Mercerie%20des%20R%C3%AAves%2C%20Via%20Terraggio%2021%2C%2020123%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="mappa-clic" data-mappa-clic style="--mappa-h: 400px"><template><iframe title="Mappa: La Mercerie des Rêves, Via Terraggio 21, Milano" data-i18n-title="w.mappa" src="https://maps.google.com/maps?q=La%20Mercerie%20des%20R%C3%AAves%2C%20Via%20Terraggio%2021%2C%2020123%20Milano&amp;z=16&amp;output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></template><div class="mappa-clic__velo"><a class="mappa-clic__btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=La+Mercerie+des+R%C3%AAves%2C+Via+Terraggio+21%2C+20123+Milano" target="_blank" rel="noopener">Mostra la mappa</a><p class="mappa-clic__nota">La mappa è di Google: aprendola, Google riceve il tuo indirizzo IP e può usare i suoi cookie.</p></div></div>
       </div>
       <div>
         <p class="dove__loro" data-i18n="w.loro">«Venite a trovarci perché descrivere tutto ciò che abbiamo è impossibile […]»</p>
@@ -289,7 +347,7 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
     <p class="piede__dove">Via Terraggio 21, 20123 Milano · <a href="tel:+390247702726" class="intero">02 4770 2726</a></p>
     <p class="piede__orario" data-i18n="f2.orario">Lunedì 15–19 · da martedì a sabato 10–14 e 14:30–19 · domenica chiuso</p>
     <p class="piede__social"><a href="https://www.facebook.com/people/La-Mercerie-des-r%C3%AAves-dal-1987/100063032751045/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/lamerceriedesreves/" target="_blank" rel="noopener">Instagram</a></p>
-    <p class="piede__cred" data-i18n="f2.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · orari, voto e recensioni dalla loro scheda Google (settembre 2026); le loro parole dal loro sito, da Facebook e da Instagram; le foto dalla loro scheda Google (di Sabine e di una cliente), dal loro sito, da Facebook e da Instagram. Il nastro l'abbiamo disegnato noi.</p>
+    <p class="piede__cred" data-i18n="f2.cred">Sito dimostrativo realizzato da <a href="https://bespokestud.io" rel="noopener">Bespoke Studio</a> · <a href="privacy.html">Privacy</a> · orari, voto e recensioni dalla loro scheda Google (settembre 2026); le loro parole dal loro sito, da Facebook e da Instagram; le foto dalla loro scheda Google (di Sabine e di una cliente), dal loro sito, da Facebook e da Instagram. Il nastro l'abbiamo disegnato noi.</p>
     <p><a class="piede__su" href="#inizio" data-i18n="f2.su">Torna su ↑</a></p>
   </div>
 </footer>
@@ -304,5 +362,6 @@ try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){r.classList.add(
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<script src="js/mappa-clic.js?v=1" defer></script>
 </body>
 </html>
