@@ -1,0 +1,316 @@
+/* PLUMBING_V 1 — reset tecnico canonico (Toolkit/boilerplate/plumbing.css) */
+[hidden] { display: none !important; }
+img { max-width: 100%; height: auto; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* ══════════ LA MERCERIE DES RÊVES — Via Terraggio 21 ══════════
+   «C'è un posto a Milano dove ogni filo ha la sua collocazione, ogni passamaneria la giusta posizione, tutto rigorosamente diviso per
+   colore, spessore e peso» (loro, sul Wix). Il loro logo verde col fregio, la parete dei nastri per colore nel legno di pino, le
+   bandierine a pois, la facciata rosa, la toile de Jouy rossa. La firma è il nastro (_mdr_firma.mjs). */
+:root {
+  --crema: #FBF6EE;
+  --crema-2: #F1E7D8;
+  --carta: #FFFDF8;
+  --verde: #2F4F3A;
+  --verde-chiaro: #3F6A50;
+  --rosa: #E9C3BE;
+  --rosa-chiaro: #F6E3DF;
+  --pois: #E58FA9;
+  --pois-testo: #A8345A;
+  --vichy: #C8323F;
+  --pino: #E7C28C;
+  --pino-scuro: #B8854A;
+  --pino-chiaro: #F0D5AC;
+  --ottone: #B8903A;
+  --telaio: #3B2A22;
+  --inchiostro: #2A2320;
+  --grigio: #5E5450;
+  --aperto: #2E8B57;
+  --f-marchio: 'Cormorant Unicase', 'Times New Roman', serif;
+  --f-titoli: 'Junge', Georgia, serif;
+  --f-testo: 'Arsenal', 'Segoe UI', Arial, sans-serif;
+  --gutter: 16px;
+  --testata-h: 78px;
+  /* le bandierine: una rosa a pois, una rossa, una panna, sul filo */
+  --bandierine: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='40'%3E%3Cpath d='M0 4 H150' stroke='%238A6A48' stroke-width='1.4'/%3E%3Cpath d='M6 4 H44 L25 34 Z' fill='%23E58FA9'/%3E%3Ccircle cx='18' cy='10' r='2' fill='%23fff'/%3E%3Ccircle cx='30' cy='10' r='2' fill='%23fff'/%3E%3Ccircle cx='24' cy='19' r='2' fill='%23fff'/%3E%3Cpath d='M56 4 H94 L75 34 Z' fill='%23C8323F'/%3E%3Cpath d='M106 4 H144 L125 34 Z' fill='%23FFFDF8' stroke='%23D8CCB9'/%3E%3C/svg%3E");
+  /* la toile de Jouy: un albero, un uccellino, un rametto, in un solo rosso chiaro */
+  --toile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cg fill='none' stroke='%23D7A3AA' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M40 96 V70 M40 70 C 22 70, 18 50, 30 44 C 28 30, 48 26, 52 38 C 66 36, 66 58, 52 62 C 50 70, 44 70, 40 70 Z M28 96 H54'/%3E%3Cpath d='M112 40 C 120 32, 134 34, 138 42 C 146 40, 150 44, 146 48 C 138 56, 120 54, 112 46 Z M146 44 L 154 40 M126 54 L 124 62 M132 54 L 132 62'/%3E%3Cpath d='M120 140 C 130 124, 146 120, 158 124 M132 130 C 128 122, 132 116, 138 116 M146 124 C 146 116, 152 112, 158 114 M104 150 C 96 142, 86 144, 84 152'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (min-width: 760px) { :root { --gutter: 24px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; color: var(--inchiostro); font: 400 1.08rem/1.62 var(--f-testo); background: var(--crema); }
+a { color: var(--verde); }
+b, strong { font-weight: 700; }
+.salta { position: absolute; left: 12px; top: -60px; z-index: 100; padding: 10px 16px; background: #fff; color: #111; font-weight: 700; text-decoration: none; }
+.salta:focus { top: 10px; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+section[id] { scroll-margin-top: calc(var(--testata-h) + 14px); }
+.intero { white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--pois-testo); outline-offset: 2px; }
+/* finché i caratteri non arrivano il ripiego è più largo: una parola lunga va a capo invece di uscire (riserva-check, #233) */
+h1, h2, h3, .cassetto__nome { overflow-wrap: anywhere; }
+
+/* ── il marchio: il fregio verde, «La Mercerie» in maiuscole sottili, «des Rêves · dal 1987» ── */
+.marchio { display: inline-grid; justify-items: center; min-width: 0; color: var(--verde); text-decoration: none; line-height: 1; }
+.marchio__fregio { width: 66px; height: 17px; margin-bottom: 1px; }
+.marchio__nome { font: 600 1.42rem/1 var(--f-marchio); letter-spacing: .14em; }
+.marchio__sotto { justify-self: end; display: flex; align-items: baseline; gap: 8px; margin-top: 2px; }
+.marchio__reves { font: 500 .92rem/1 var(--f-marchio); letter-spacing: .16em; }
+.marchio__anno { font: 700 .64rem/1 var(--f-testo); letter-spacing: .14em; text-transform: uppercase; }
+
+/* ── la testata crema col doppio filetto del logo ── */
+.testata { position: sticky; top: 0; z-index: 50; background: var(--crema); border-bottom: 4px double var(--verde); }
+.testata__dentro { display: flex; align-items: center; gap: 10px; max-width: 1280px; margin: 0 auto; padding: 8px var(--gutter); min-height: 74px; }
+.voci { display: none; }
+.testata__azioni { margin-left: auto; display: flex; align-items: center; gap: 6px; flex: none; }
+.lingue { display: flex; }
+.lingue button { min-width: 34px; min-height: 38px; padding: 3px 5px 0; border: 1px solid var(--verde); background: transparent; color: var(--inchiostro); font: 700 .9rem var(--f-testo); cursor: pointer; }
+.lingue button + button { border-left: 0; }
+.lingue button.is-on { background: var(--verde); color: #FFFFFF; }
+.chiama { display: none; align-items: center; min-height: 40px; padding: 3px 18px 0; border-radius: 20px; background: var(--verde); color: #FFFFFF; font: 700 .96rem var(--f-testo); text-decoration: none; }
+.chiama:hover { background: var(--pois-testo); }
+.burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 10px; border: 1px solid var(--verde); background: transparent; cursor: pointer; }
+.burger span { display: block; height: 2px; background: var(--verde); transition: transform .2s, opacity .2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-mobile { position: fixed; top: var(--testata-h); left: 0; right: 0; z-index: 49; max-height: calc(100vh - var(--testata-h)); overflow-y: auto; padding: 10px var(--gutter) 22px; background: var(--crema); box-shadow: 0 12px 24px rgba(42, 35, 32, .2); }
+.menu-mobile a { display: block; padding: 12px 2px 10px; border-bottom: 1px solid var(--crema-2); color: var(--inchiostro); font: 400 1.25rem/1.3 var(--f-titoli); text-decoration: none; }
+.menu-mobile__tel { display: flex !important; justify-content: center; gap: 8px; margin-top: 14px; border: 0 !important; border-radius: 26px; background: var(--verde); color: #FFFFFF !important; font: 700 1.08rem/1.3 var(--f-testo) !important; padding: 14px 8px 11px !important; }
+
+/* ── l'apertura: sotto le bandierine; la firma nella vetrina del muro rosa ── */
+.apertura { position: relative; display: grid; gap: 34px; padding: 62px max(var(--gutter), calc((100% - 1240px) / 2)) 60px; background: var(--crema); }
+.bandierine { position: absolute; left: 0; right: 0; top: 0; height: 40px; background: var(--bandierine) 0 0 / 150px 40px repeat-x; }
+.apertura__sopra { margin: 0 0 14px; font: 700 .98rem/1.45 var(--f-testo); color: var(--pois-testo); }
+.titolo { margin: 0 0 14px; font: 400 clamp(2rem, 1.2rem + 3vw, 3.4rem)/1.16 var(--f-titoli); color: var(--verde); text-wrap: balance; }
+.apertura__seconda { margin: 0 0 18px; font: 400 clamp(1.15rem, 1rem + .6vw, 1.4rem)/1.4 var(--f-titoli); color: var(--pois-testo); }
+.apertura__frase { max-width: 32em; margin: 0 0 22px; font-size: 1.12rem; }
+.voto { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin: 0; }
+.voto__n { font: 400 2.5rem/1.1 var(--f-titoli); color: var(--verde); }
+.voto__su { font-size: 1.04rem; }
+.voto--sezione { margin: -6px 0 28px; }
+.citazione { max-width: 28em; margin: 16px 0 0; padding: 2px 0 0 16px; border-left: 3px dotted var(--pois); }
+.citazione p { margin: 0; font: 400 1.2rem/1.45 var(--f-titoli); color: var(--inchiostro); }
+.citazione footer { margin-top: 4px; font-size: .96rem; color: var(--grigio); }
+.stato { display: inline-flex; align-items: center; gap: 8px; margin: 18px 0 0; font: 700 1.02rem/1.4 var(--f-testo); color: var(--inchiostro); }
+.stato::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .45; flex: none; }
+.stato.is-aperto::before { opacity: 1; background: var(--aperto); box-shadow: 0 0 0 3px rgba(46, 139, 87, .28); }
+.apertura__azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.bottone { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 4px 26px 0; border: 2px solid var(--verde); border-radius: 26px; background: transparent; color: var(--verde); font: 700 1.05rem/1.1 var(--f-testo); text-align: center; text-decoration: none; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.bottone--pieno { background: var(--verde); color: #FFFFFF; }
+.bottone--pieno:hover { background: var(--pois-testo); border-color: var(--pois-testo); }
+.bottone--vuoto:hover { background: var(--verde); color: #FFFFFF; }
+
+/* la vetrina nel muro rosa: le lesene di pietra, il sopraluce in ferro, il telaio scuro */
+.apertura__firma { width: 100%; max-width: 580px; justify-self: center; }
+.muro-rosa { position: relative; padding: 20px 34px 18px; background: var(--rosa); box-shadow: 0 26px 36px -28px rgba(42, 35, 32, .6); }
+.muro-rosa::before, .muro-rosa::after { content: ''; position: absolute; top: 0; bottom: 0; width: 18px; background: repeating-linear-gradient(180deg, #DDD6CC 0 26px, #C9C0B4 26px 28px); }
+.muro-rosa::before { left: 0; }
+.muro-rosa::after { right: 0; }
+.rosta { height: 28px; border-radius: 3px 3px 0 0; background: radial-gradient(circle at 50% 100%, #F4E9D9 0 8px, var(--telaio) 8.5px 11px, transparent 11.5px) 0 100% / 26px 26px repeat-x, var(--telaio); }
+.banco { margin: 0; -webkit-user-select: none; user-select: none; }
+.banco > svg { border: 10px solid var(--telaio); border-top-width: 4px; }
+.banco__didascalia { min-height: 3em; margin: 12px 4px 0; color: var(--inchiostro); font-size: 1rem; line-height: 1.45; text-align: center; }
+.banco__d { display: none; }
+.banco[data-modo="0"] .banco__d[data-m="0"], .banco[data-modo="1"] .banco__d[data-m="1"], .banco[data-modo="2"] .banco__d[data-m="2"] { display: inline; }
+.banco__modi { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 10px; }
+.banco__modi button { min-height: 44px; padding: 4px 16px 0; border: 1.5px solid var(--verde); border-radius: 22px; background: var(--carta); color: var(--inchiostro); font: 700 1rem/1.1 var(--f-testo); cursor: pointer; }
+.banco__modi button:hover { border-color: var(--pois-testo); }
+.banco__modi button[aria-pressed="true"] { background: var(--verde); color: #FFFFFF; }
+/* senza JS il nastro non cambia: i bottoni restano nascosti col loro posto (#240) */
+.no-js .banco__modi { visibility: hidden; }
+.apertura__nota { max-width: 34em; margin: 14px auto 0; font-size: 1rem; text-align: center; color: var(--grigio); }
+
+/* ── i capitoli ── */
+.capitolo { padding: 68px max(var(--gutter), calc((100% - 1180px) / 2)) 64px; }
+.capitolo--crema { background: var(--crema); }
+.capitolo--pino { background: var(--pino); }
+.capitolo--rosa { background: var(--rosa-chiaro); }
+.capitolo--toile { background: #F7EDE8 var(--toile); }
+.etichetta { margin: 0 0 4px; font: 700 .9rem/1.3 var(--f-testo); letter-spacing: .18em; text-transform: uppercase; color: var(--pois-testo); }
+.capitolo--pino .etichetta { color: #7E2544; }
+.capitolo__titolo { max-width: 22em; margin: 6px 0 20px; font: 400 clamp(1.75rem, 1.2rem + 2vw, 2.6rem)/1.2 var(--f-titoli); color: var(--verde); text-wrap: balance; }
+.capitolo__sotto { max-width: 44em; margin: 0 0 30px; font-size: 1.1rem; }
+figure { margin: 0; }
+figcaption { margin-top: 7px; font-size: .98rem; line-height: 1.4; color: var(--grigio); }
+.foto { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.foto img { display: block; width: 100%; height: auto; }
+
+/* diviso per colore: la foto della parete nel telaio di pino */
+.parete { display: grid; gap: 28px; align-items: center; }
+.parete__foto .foto { border: 10px solid var(--pino-scuro); box-shadow: 0 20px 28px -22px rgba(42, 35, 32, .7); }
+.capitolo--pino figcaption { color: #4A3A2E; }
+.parete__parole p { max-width: 34em; margin: 0 0 14px; }
+.parete__loro { font: 400 1.25rem/1.55 var(--f-titoli); color: var(--verde); }
+.parete__nota { font-size: 1rem; color: #4A3A2E; }
+
+/* i cassetti: la cassettiera di pino, l'etichetta nel portaetichetta d'ottone, il pomolo */
+.cassettiera { display: grid; gap: 14px; padding: 14px; border-radius: 4px; background: var(--pino-scuro); box-shadow: 0 24px 34px -26px rgba(42, 35, 32, .7); }
+.cassetto { display: flex; flex-direction: column; background: var(--crema); }
+.cassetto__fronte { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 12px 12px; background: repeating-linear-gradient(90deg, rgba(160, 110, 50, .08) 0 2px, transparent 2px 9px), var(--pino); box-shadow: inset 0 -3px 0 rgba(90, 60, 30, .25); }
+.cassetto__nome { margin: 0; padding: 5px 16px 3px; border: 3px solid var(--ottone); border-radius: 3px; background: var(--carta); font: 600 1.18rem/1.2 var(--f-marchio); letter-spacing: .06em; color: var(--inchiostro); text-align: center; }
+.cassetto__pomo { width: 20px; height: 20px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #F3DC9A, var(--ottone) 60%, #7E6128); box-shadow: 0 2px 3px rgba(42, 35, 32, .4); }
+.cassetto__dentro { flex: 1; padding: 12px 12px 16px; box-shadow: inset 0 10px 12px -10px rgba(42, 35, 32, .5); }
+.cassetto__dentro img, .cartoncino { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 2px; }
+.cassetto__dentro p { margin: 12px 2px 0; font-size: 1.02rem; line-height: 1.55; }
+
+/* su ordinazione: il foglio sulla toile de Jouy */
+.sogno { display: grid; gap: 22px; align-items: start; }
+.sogno__foglio { padding: 28px 26px 26px; background: var(--carta); box-shadow: inset 0 0 0 6px var(--carta), inset 0 0 0 7.5px var(--vichy), 0 20px 30px -24px rgba(42, 35, 32, .6); }
+.sogno__foglio .capitolo__titolo { margin-bottom: 16px; }
+.sogno__foglio p { max-width: 36em; margin: 0 0 14px; }
+.sogno__loro { font: 400 1.18rem/1.55 var(--f-titoli); color: var(--verde); }
+.sogno__azioni { margin: 20px 0 0 !important; }
+.sogno__foto { padding: 10px 10px 12px; background: var(--carta); box-shadow: 0 16px 24px -18px rgba(42, 35, 32, .6); }
+.sogno__foto img { aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* la bottega: le foto in piedi sulle mensole */
+.mensole { display: flex; flex-wrap: wrap; gap: 34px 14px; }
+.mensola-foto { flex: 1 1 250px; padding-bottom: 12px; border-bottom: 10px solid var(--pino-scuro); box-shadow: 0 6px 6px -4px rgba(42, 35, 32, .35); }
+.mensola-foto--largo { flex-basis: 520px; }
+.mensola-foto img { height: 230px; object-fit: cover; }
+
+/* dicono: le etichette tessute, col risvolto a pois */
+.etichette-tessute { columns: 1; column-gap: 22px; margin: 0; padding: 0; list-style: none; }
+.tessuta { position: relative; break-inside: avoid; margin: 0 0 22px; padding: 24px 22px 18px 42px; background: var(--carta); outline: 1.5px dashed rgba(168, 52, 90, .5); outline-offset: -8px; box-shadow: 0 14px 22px -18px rgba(120, 40, 60, .6); }
+.tessuta::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 18px; background: radial-gradient(circle, #FFFFFF 0 1.8px, transparent 2.2px) 0 0 / 9px 9px, var(--pois); }
+.tessuta__testo { margin: 0; font-size: 1.04rem; line-height: 1.58; }
+.tessuta__chi { margin: 10px 0 0; font-size: .96rem; line-height: 1.4; color: var(--grigio); }
+.tessuta__chi b { display: block; color: var(--verde); }
+.dicono__nota { max-width: 48em; margin: 8px 0 0; font-size: 1rem; }
+.dicono__nota a { color: var(--pois-testo); font-weight: 700; }
+
+/* orari: ogni giorno un metro da sarta, dalle 9 alle 20; acceso quando si è aperti */
+.stato--metro { display: flex; margin: 0 0 16px; }
+.metri { display: grid; gap: 12px; max-width: 980px; font-size: 1rem; }
+.metri__ore { position: relative; height: 18px; font: 700 .86rem/1 var(--f-testo); color: var(--grigio); }
+.metri__ore span { position: absolute; top: 0; transform: translateX(-50%); }
+.metri__ore .n10 { left: 9.09%; } .metri__ore .n12 { left: 27.27%; } .metri__ore .n14 { left: 45.45%; } .metri__ore .n16 { left: 63.64%; } .metri__ore .n18 { left: 81.82%; }
+.giorno { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nome ore" "metro metro"; align-items: baseline; gap: 4px 12px; min-width: 0; }
+.giorno__nome { grid-area: nome; font: 400 1.14rem/1.3 var(--f-titoli); }
+.giorno__ore { grid-area: ore; font-weight: 700; white-space: nowrap; }
+.metro { grid-area: metro; position: relative; display: block; height: 26px; border-radius: 2px; background: repeating-linear-gradient(90deg, rgba(70, 50, 0, .55) 0 1px, transparent 1px calc(100% / 11)) 0 0 / 100% 9px no-repeat, repeating-linear-gradient(90deg, rgba(70, 50, 0, .3) 0 1px, transparent 1px calc(100% / 22)) 0 0 / 100% 5px no-repeat, #F2D55C; box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15); }
+.fascia { position: absolute; top: 9px; bottom: 3px; background: radial-gradient(circle, #FFFFFF 0 1.2px, transparent 1.6px) 0 0 / 7px 7px, #D6567F; }
+.fascia--lun { left: 54.55%; width: 36.36%; }
+.fascia--mat { left: 9.09%; width: 36.36%; }
+.fascia--pom { left: 50%; width: 40.91%; }
+.giorno--chiuso .metro { background: repeating-linear-gradient(135deg, #EDE4D4 0 6px, #E0D3BE 6px 8px); }
+.giorno--chiuso .giorno__ore { color: var(--grigio); font-weight: 500; }
+.giorno.is-today .giorno__nome, .giorno.is-today .giorno__ore { color: var(--pois-testo); }
+.giorno.is-today .metro { box-shadow: 0 0 0 2px var(--pois-testo); }
+.orari__nota { margin: 14px 0 34px; font-size: 1rem; color: var(--grigio); }
+
+/* dove */
+.dove { display: grid; gap: 30px; align-items: start; }
+.dove__loro { margin: 0 0 14px; font: 400 1.25rem/1.45 var(--f-titoli); color: var(--verde); }
+.cartina { overflow: hidden; border: 8px solid var(--rosa); }
+.cartina iframe { display: block; width: 100%; height: 320px; border: 0; }
+.indirizzo { margin: 0 0 18px; }
+.indirizzo div { display: grid; grid-template-columns: 7.4em minmax(0, 1fr); gap: 10px; padding: 8px 0 6px; border-bottom: 1px solid var(--crema-2); }
+.indirizzo dt { font: 700 .84rem/2 var(--f-testo); letter-spacing: .12em; text-transform: uppercase; color: var(--pois-testo); }
+.indirizzo dd { margin: 0; overflow-wrap: anywhere; }
+.dove__azioni { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; }
+
+/* ── la chiusura: il verde del logo ── */
+.piede { background: var(--verde); color: #F4ECDF; }
+.piede__dentro { max-width: 900px; margin: 0 auto; padding: 46px var(--gutter) 100px; text-align: center; }
+.piede__marchio { margin: 0 0 16px; }
+.piede .marchio__nome { font-size: 1.6rem; color: #FFFFFF; }
+.piede .marchio__reves { color: #F4ECDF; }
+.piede__dove, .piede__orario, .piede__social { margin: 0 0 8px; }
+.piede a { color: #FFFFFF; }
+.piede__cred { max-width: 54em; margin: 18px auto 10px; font-size: .96rem; color: #E2D8C8; }
+.piede__su { font-weight: 700; }
+
+/* ── reveal (plumbing) ── */
+.js .reveal { opacity: 0; }
+.js .reveal.in-view { opacity: 1; }
+html:not(.js) .reveal { opacity: 1; }
+.reduced-motion .reveal { opacity: 1 !important; }
+
+/* ── la barra e la lightbox ── */
+.action-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 1fr 1fr; background: var(--inchiostro); transform: translateY(110%); transition: transform .25s; }
+.action-bar.is-visible { transform: translateY(0); }
+.action-bar a { display: flex; align-items: center; justify-content: center; min-height: 54px; padding-top: 3px; color: #fff; font: 700 1.04rem var(--f-testo); text-decoration: none; }
+.action-bar a:first-child { background: var(--verde); }
+#lightbox { position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(30, 26, 24, .95); }
+#lightbox[hidden] { display: none !important; }
+#lightbox img { width: auto; max-width: min(1400px, 100%); max-height: 88vh; }
+#lightboxClose { position: absolute; top: 14px; right: 16px; width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, .6); border-radius: 50%; background: transparent; color: #fff; font-size: 32px; line-height: 1; cursor: pointer; }
+
+/* ── le larghezze ── */
+@media (max-width: 379px) {
+  .testata__dentro { gap: 6px; }
+  .lingue button { min-width: 31px; }
+  .marchio__nome { font-size: 1.2rem; letter-spacing: .1em; }
+  .marchio__reves { font-size: .82rem; letter-spacing: .1em; }
+  .marchio__anno { font-size: .6rem; letter-spacing: .08em; }
+  .stato { font-size: .96rem; }
+  .banco__modi button { padding: 4px 12px 0; }
+  .bottone { padding: 4px 16px 0; }
+  .muro-rosa { padding: 14px 24px 14px; }
+  .muro-rosa::before, .muro-rosa::after { width: 12px; }
+  .sogno__foglio { padding: 24px 18px 22px; }
+  .tessuta { padding-left: 34px; }
+  .tessuta::before { width: 14px; }
+}
+@media (min-width: 560px) {
+  .chiama { display: inline-flex; }
+  .sogno { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sogno__foglio { grid-column: 1 / -1; }
+}
+@media (min-width: 760px) {
+  .action-bar { display: none; }
+  .piede__dentro { padding-bottom: 50px; }
+  .cassettiera { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .etichette-tessute { columns: 2; }
+  .dove { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .parete { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 44px; }
+  /* il metro sulla stessa riga del giorno: il nome, le ore, la fettuccia */
+  .giorno { grid-template-columns: 7.6em 10.2em minmax(0, 1fr); grid-template-areas: "nome ore metro"; align-items: center; }
+  .metri__ore { margin-left: calc(17.8em + 24px); }
+}
+@media (min-width: 960px) {
+  .apertura { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 52px; }
+  .sogno { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .sogno__foglio { grid-column: auto; }
+}
+@media (min-width: 1060px) {
+  .testata__dentro { gap: 16px; }
+  .voci { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: 24px; }
+  .voci a { padding: 5px 1px 2px; color: var(--inchiostro); font: 700 .98rem var(--f-testo); text-decoration: none; }
+  .voci a:hover, .voci a[aria-current="true"] { color: var(--pois-testo); text-decoration: underline; text-decoration-color: var(--pois); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+  .burger { display: none; }
+  .cassettiera { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .etichette-tessute { columns: 3; }
+}
+
+/*NASTRO*/
+/* il nastro — generato da _mdr_firma.mjs: non modificare a mano */
+.nastro__svg { display: block; width: 100%; height: auto; overflow: hidden; background: #E7C28C; }
+.muro { fill: #E7C28C; } .muro__divisorio { fill: #C99A5B; } .mensola { fill: #B8854A; } .mensola__luce { fill: #D9AE72; }
+.rocchetto__flangia { fill: #FBF8F0; stroke: #D8CCB9; stroke-width: .6; } .rocchetto__luce { fill: #FFFFFF; fill-opacity: .22; }
+.bandierine__filo { fill: none; stroke: #8A6A48; stroke-width: 1.4; }
+.bandierina--a { fill: #E58FA9; } .bandierina--b { fill: #C8323F; } .bandierina--c { fill: #FBF8F0; stroke: #D8CCB9; stroke-width: .8; }
+.banco__piano { fill: #F5EEE4; } .banco__bordo { fill: #E2D4C0; }
+.ombra { fill: #7A5A3A; fill-opacity: .18; } .sostegno { fill: #A8753F; }
+.bobina__disco { fill: #FBF8F2; stroke: #D8CCB9; stroke-width: 1.2; } .bobina__giri { fill: none; stroke: #3C1E14; stroke-opacity: .16; stroke-width: 1; }
+.bobina__mozzo { fill: #F4EEE3; stroke: #D8CCB9; stroke-width: 1; } .bobina__foro { fill: #B99A78; } .bobina__perno { fill: #8A6A48; }
+.pacco__fronte { fill: #D7B584; } .pacco__sopra { fill: #E6C99C; } .pacco__lato { fill: #C29C68; } .pacco__spigolo { fill: none; stroke: #A57D4B; stroke-width: 1.2; stroke-linejoin: round; }
+.nastro { fill: none; stroke-width: 17; stroke-linecap: butt; stroke-linejoin: round; }
+.fiocco__bordo { stroke: #3C1E14; stroke-opacity: .25; stroke-width: 1.2; }
+.cartellino__filo { fill: none; stroke: #7A5A3A; stroke-width: 1.4; } .cartellino__carta { fill: #EFE2C4; stroke: #B38A55; stroke-width: 1.2; }
+.cartellino__foro { fill: #FFFFFF; stroke: #B38A55; stroke-width: 1; } .cartellino__testo { font: 400 16px/1 'Junge', Georgia, serif; fill: #2F4F3A; }
+.lama { fill: #C3CACE; stroke: #7D868C; stroke-width: 1; } .manico { fill: none; stroke: #2F5E46; stroke-width: 6; stroke-linecap: round; } .perno { fill: #7D868C; }
+.banco[data-modo="0"] .nastro { stroke: url(#mdr-pois); } .banco[data-modo="0"] .nastro-pieno { fill: url(#mdr-pois); }
+.banco[data-modo="1"] .nastro { stroke: url(#mdr-vichy); } .banco[data-modo="1"] .nastro-pieno { fill: url(#mdr-vichy); }
+.banco[data-modo="2"] .nastro { stroke: url(#mdr-oro); } .banco[data-modo="2"] .nastro-pieno { fill: url(#mdr-oro); }
+.firma-attesa .bobina { transform: translate(104px, 318px) rotate(0deg); }
+.firma-attesa .filo, .firma-attesa .coda, .firma-attesa .giro, .firma-attesa .giu { stroke-dasharray: 0 2; stroke-dashoffset: 0; }
+.firma-attesa .fiocco { transform: translate(381px, 351px) rotate(-14deg) scale(0); }
+.firma-attesa .cartellino { opacity: 0; }
+/*/NASTRO*/
